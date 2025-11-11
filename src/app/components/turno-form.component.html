@@ -1,0 +1,20 @@
+<h2>Nuevo Turno</h2>
+
+<form (ngSubmit)="guardarTurno()">
+  <label for="paciente">Paciente:</label>
+  <select id="paciente" [(ngModel)]="turno.pacienteId" name="pacienteId" required>
+    <option [ngValue]="null" disabled>Selecciona un paciente</option>
+    <option *ngFor="let p of pacientes" [ngValue]="p.id">{{ p.nombre }} {{ p.apellido }}</option>
+  </select>
+
+  <label for="sucursal">Sucursal:</label>
+  <select id="sucursal" [(ngModel)]="turno.sucursalId" name="sucursalId" required>
+    <option [ngValue]="null" disabled>Selecciona una sucursal</option>
+    <option *ngFor="let s of sucursales" [ngValue]="s.id">{{ s.nombre }}</option>
+  </select>
+
+  <label for="fecha">Fecha:</label>
+  <input type="datetime-local" id="fecha" [(ngModel)]="turno.fecha" name="fecha" required />
+
+  <button type="submit">Guardar</button>
+</form>

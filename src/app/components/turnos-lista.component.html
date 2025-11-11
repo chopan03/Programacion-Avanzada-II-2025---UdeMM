@@ -1,0 +1,10 @@
+<h2>Turnos</h2>
+
+<button routerLink="/turnos/nuevo">+ Nuevo Turno</button>
+
+<ul>
+  <li *ngFor="let t of turnos">
+    {{ t.fecha }} - Paciente: {{ getPacienteNombre(t.pacienteId) }} - Sucursal: {{ getSucursalNombre(t.sucursalId) }}
+    <button (click)="eliminarTurno(t.id)">Eliminar</button>
+  </li>
+</ul>

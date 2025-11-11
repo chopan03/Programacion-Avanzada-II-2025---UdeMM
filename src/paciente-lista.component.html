@@ -1,0 +1,10 @@
+<h2>Pacientes del Grupo Familiar</h2>
+
+<button routerLink="/pacientes/nuevo">+ Nuevo Paciente</button>
+
+<ul>
+  <li *ngFor="let p of pacientes">
+    {{ p.nombre }} {{ p.apellido }} - DNI: {{ p.dni }}
+    <button (click)="eliminarPaciente(p.id)">Eliminar</button>
+  </li>
+</ul>

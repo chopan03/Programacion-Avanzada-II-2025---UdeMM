@@ -1,0 +1,17 @@
+<h2>Nuevo Paciente</h2>
+
+<form (ngSubmit)="guardarPaciente()">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" [(ngModel)]="paciente.nombre" name="nombre" required />
+
+  <label for="apellido">Apellido:</label>
+  <input type="text" id="apellido" [(ngModel)]="paciente.apellido" name="apellido" required />
+
+  <label for="dni">DNI:</label>
+  <input type="text" id="dni" [(ngModel)]="paciente.dni" name="dni" required />
+
+  <label for="obraSocialId">ID de Obra Social:</label>
+  <input type="number" id="obraSocialId" [(ngModel)]="paciente.obraSocialId" name="obraSocialId" required />
+
+  <button type="submit">Guardar</button>
+</form>

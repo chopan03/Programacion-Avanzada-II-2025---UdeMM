@@ -1,0 +1,20 @@
+<h2>Pacientes del Grupo Familiar</h2>
+
+<div class="actions">
+  <button routerLink="/pacientes/nuevo" class="btn primary">+ Nuevo Paciente</button>
+  <button routerLink="/turnos" class="btn">Ver Turnos</button>
+</div>
+
+<ul class="card-list">
+  <li class="card" *ngFor="let p of pacientes">
+    <div class="card-title">{{ p.nombre }} {{ p.apellido }}</div>
+    <div class="card-body">
+      <div>DNI: <strong>{{ p.dni }}</strong></div>
+      <div>Obra Social: <strong>{{ getObraSocialNombre(p.obraSocialId) }}</strong></div>
+    </div>
+    <div class="card-actions">
+      <button class="btn" [routerLink]="['/pacientes/editar', p.id]">Editar</button>
+      <button class="btn danger" (click)="eliminarPaciente(p.id)">Eliminar</button>
+    </div>
+  </li>
+</ul>
