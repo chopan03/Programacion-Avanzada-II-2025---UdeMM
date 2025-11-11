@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alta de Paciente</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="pacientes.html">Pacientes</a></li>
+        <li><a href="alta-paciente.html">Alta pacientes</a></li>
+        <li><a href="acerca-de.html">Acerca de</a></li>
+      </ul>
+    </nav>
+    <h2>Nuevo paciente</h2>
+    <form id="form-alta">
+      <input type="text" name="Apellidos" placeholder="Apellidos" required />
+      <input type="text" name="Nombres" placeholder="Nombres" required />
+      <input type="number" name="DNI" placeholder="DNI" required />
+      <input type="date" name="FechaDeNacimiento" required />
+
+      <label for="Sexo">Sexo:</label>
+      <select name="Sexo" required>
+        <option value="">Seleccionar</option>
+        <option value="M">Masculino</option>
+        <option value="F">Femenino</option>
+        <option value="X">No binario</option>
+      </select>
+
+      <label for="ObraSocialId">Obra Social:</label>
+      <select name="ObraSocialId" id="obra-social-select" required></select>
+
+      <input
+        type="text"
+        name="Credencial"
+        placeholder="N° de credencial"
+        required
+      />
+
+      <button type="submit">Crear paciente</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script src="js/alta.js"></script>
+  </body>
+</html>
